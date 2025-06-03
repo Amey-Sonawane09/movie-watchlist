@@ -1,0 +1,31 @@
+CINEMASTASH - 
+
+SignUp and Login
+
+
+HEADER
+
+Home
+Nav - Home, Sign, Login, About, Watchlist, ContactUs, Feedback
+
+Create WatchList - Home Page:
+1. Search Bar
+2. Add Button - Details(FullName, Time, MovieName(Details))
+3. Movie List and Details
+4. Sort option - Year, Name, Genre
+
+WatchList:
+1. List of all movies added
+2. Add to fav
+3. Delete 
+4. Edit
+5. Sort According to Upcoming movies to watch
+
+6. READ (Optional) in the list view
+
+Contact Us
+
+About Us
+
+
+FOOTER
