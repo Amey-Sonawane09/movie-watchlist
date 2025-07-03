@@ -3,6 +3,8 @@ import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
 import MovieCard from '../components/MovieCard';
 import { useNavigate } from 'react-router-dom';
 
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
+
 const Watchlist = () => {
   const [movies, setMovies] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -21,7 +23,7 @@ const Watchlist = () => {
       
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:8000/api/movies/watchlist', {
+        const response = await fetch(`${API_URL}/api/movies/watchlist`, {
           headers: {
             'x-auth-token': token,
           },
@@ -58,9 +60,9 @@ const Watchlist = () => {
     }
     const movieToAdd = {
         title: newMovie.title,
-        year: newMovie.year,  // Convert empty string to null
-        imdb_id: newMovie.imdb_id || null,  // Convert empty string to null
-        poster_url: null  // Add this if you have a poster_url field
+        year: newMovie.year,
+        imdb_id: newMovie.imdb_id || null,
+        poster_url: null
       };
     
     const token = localStorage.getItem('token');
@@ -71,7 +73,7 @@ const Watchlist = () => {
     
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:8000/api/movies/watchlist', {
+      const response = await fetch(`${API_URL}/api/movies/watchlist`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -103,7 +105,7 @@ const Watchlist = () => {
     }
     
     try {
-      const response = await fetch('http://localhost:8000/api/movies/watchlist/status', {
+      const response = await fetch(`${API_URL}/api/movies/watchlist/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -132,7 +134,7 @@ const Watchlist = () => {
     }
     
     try {
-      const response = await fetch(`http://localhost:8000/api/movies/watchlist/${movieId}`, {
+      const response = await fetch(`${API_URL}/api/movies/watchlist/${movieId}`, {
         method: 'DELETE',
         headers: {
           'x-auth-token': token,
