@@ -21,7 +21,7 @@ const Watchlist = () => {
       
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5000/api/movies/watchlist', {
+        const response = await fetch('http://localhost:8000/api/movies/watchlist', {
           headers: {
             'x-auth-token': token,
           },

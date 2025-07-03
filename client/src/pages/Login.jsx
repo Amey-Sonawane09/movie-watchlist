@@ -26,7 +26,7 @@ const Login = () => {
     //   setError('Password must be at least 6 characters with at least one letter and one number.');
     // }
     try {
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch('http://localhost:8000/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
