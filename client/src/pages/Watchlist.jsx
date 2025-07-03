@@ -71,7 +71,7 @@ const Watchlist = () => {
     
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/movies/watchlist', {
+      const response = await fetch('http://localhost:8000/api/movies/watchlist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ const Watchlist = () => {
     }
     
     try {
-      const response = await fetch('http://localhost:5000/api/movies/watchlist/status', {
+      const response = await fetch('http://localhost:8000/api/movies/watchlist/status', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -132,7 +132,7 @@ const Watchlist = () => {
     }
     
     try {
-      const response = await fetch(`http://localhost:5000/api/movies/watchlist/${movieId}`, {
+      const response = await fetch(`http://localhost:8000/api/movies/watchlist/${movieId}`, {
         method: 'DELETE',
         headers: {
           'x-auth-token': token,
